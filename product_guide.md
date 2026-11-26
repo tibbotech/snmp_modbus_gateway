@@ -16,11 +16,12 @@
   - [4.1 Database](#41-database)
   - [Column reference](#column-reference)
   - [4.2 Settings](#42-settings)
-    - [4.2.1 Info](#421-info)
-    - [4.2.2 Config](#422-config)
-    - [4.2.3 Network](#423-network)
-    - [4.2.4 SNMP](#424-snmp)
-    - [4.2.4.1 Scalar Instance Object-ID](#4241-scalar-instance-object-id)
+    - [4.2.1 General](#421-general)
+    - [4.2.2 Info](#422-info)
+    - [4.2.3 Config](#423-config)
+    - [4.2.4 Network](#424-network)
+    - [4.2.5 SNMP](#425-snmp)
+    - [4.2.5.1 Scalar Instance Object-ID](#4251-scalar-instance-object-id)
   - [4.3 Log](#43-log)
   - [4.4 System](#44-system)
     - [4.4.1 Reboot Device](#441-reboot-device)
@@ -196,31 +197,41 @@ tables.
 <a id="42-settings"></a>
 ### 4.2 Settings [↑](#bookmarks "Back to Bookmarks")
 
-Use the Settings area to review device information and configure polling,
-network, and SNMP access. 
+The Settings area is used to configure general device options, review device
+information, and configure polling, network, and SNMP access.
 
 > **Reminder:**
 > - Restart the device after changing a setting.
 > - The new value takes effect after restart.
 
-<a id="421-info"></a>
-#### 4.2.1 Info [↑](#bookmarks "Back to Bookmarks")
+<a id="421-general"></a>
+#### 4.2.1 General [↑](#bookmarks "Back to Bookmarks")
+
+Use the `General` group to configure the Web Admin password, device time zone,
+and daylight saving time.
+
+> **NOTE:** Web Admin Username: `admin`
+
+![Device Console Settings, General group](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_general.png)
+
+<a id="422-info"></a>
+#### 4.2.2 Info [↑](#bookmarks "Back to Bookmarks")
 
 The `Info` group displays the current and maximum number of `TABLE_DEVICES_INPUT` records.
 
 ![Device Console Settings, Info group](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_info_rev2.png)
 
-<a id="422-config"></a>
-#### 4.2.2 Config [↑](#bookmarks "Back to Bookmarks")
+<a id="423-config"></a>
+#### 4.2.3 Config [↑](#bookmarks "Back to Bookmarks")
 
-Use the `Config` group to set the **Polling Interval** and **Debugprint**.
+The `Config` group provides options for setting the `Polling Interval` and `Debugprint`.
 
 > **NOTE:** The supported `Polling Interval` range is 0.1 to 60 seconds.
 
 ![Device Console Settings, Config group](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_config.png)
 
-<a id="423-network"></a>
-#### 4.2.3 Network [↑](#bookmarks "Back to Bookmarks")
+<a id="424-network"></a>
+#### 4.2.4 Network [↑](#bookmarks "Back to Bookmarks")
 
 The Network group lets you enable DHCP or configure a static Ethernet IP
 address, netmask, and gateway.
@@ -232,8 +243,8 @@ address, netmask, and gateway.
 
 ![Device Console Settings, Network group](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_network.png)
 
-<a id="424-snmp"></a>
-#### 4.2.4 SNMP [↑](#bookmarks "Back to Bookmarks")
+<a id="425-snmp"></a>
+#### 4.2.5 SNMP [↑](#bookmarks "Back to Bookmarks")
 
 Use the `SNMP` group to configure how your monitoring system connects to the gateway.
 You can set the SNMP port, read and write community strings, device description, system object ID, and SNMPv3 user and security settings.
@@ -249,8 +260,8 @@ You can set the SNMP port, read and write community strings, device description,
 
 ![Device Console Settings, SNMPv3 security settings](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_snmp_security_settings.png)
 
-<a id="4241-scalar-instance-object-id"></a>
-#### 4.2.4.1 Scalar Instance Object-ID [↑](#bookmarks "Back to Bookmarks")
+<a id="4251-scalar-instance-object-id"></a>
+#### 4.2.5.1 Scalar Instance Object-ID [↑](#bookmarks "Back to Bookmarks")
 
 Each mapped gateway value is available through a **full SNMP OID**.
 Its composition is:
@@ -437,7 +448,7 @@ mapping for each Modbus value that you want to make available through SNMP.
 > - Enter the `DEVICE_ID`, `REG_ADDR`, and `FUNC_CODE` exactly as specified in
 >   the connected field device's Modbus register map or datasheet.
 > - Each `OID_COLUMN` value must be **UNIQUE**. For details, see
->   [Section 4.2.4.1, Scalar Instance Object-ID](#4241-scalar-instance-object-id).
+>   [Section 4.2.5.1, Scalar Instance Object-ID](#4251-scalar-instance-object-id).
 > - `TABLE_DEVICES_INPUT` supports a maximum of **30** mappings.
 > - `OID_COLUMN = 207` is used later in this guide to demonstrate **Write Data
 >   to Modbus**.
@@ -490,7 +501,7 @@ results, updated at the configured polling interval.
 
 This example uses a Linux computer and SNMPv2c to read the Modbus value
 published by the gateway. The SNMP settings used below are configured in
-[Section 4.2.4, SNMP](#424-snmp).
+[Section 4.2.5, SNMP](#425-snmp).
 
 Use `snmpwalk` to view **ALL** SNMP values available under the gateway's
 `SysObjectID`.
@@ -558,7 +569,7 @@ snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.401.0
 This section shows how an authorized SNMP client can write a value to a Modbus
 register through the gateway. In this example, `OID_COLUMN 207` identifies the
 configured Modbus write mapping. The SNMP settings used below are configured in
-[Section 4.2.4, SNMP](#424-snmp).
+[Section 4.2.5, SNMP](#425-snmp).
 
 > **NOTE:**
 > - The SNMP write command sends the requested value to the connected Modbus
