@@ -32,7 +32,7 @@
                 "ID": "mquecbkttwt2hgq703",
                 "GENERAL": "",
                 "ADVANCED": "",
-                "DEVICE_NAME": "snmp_modbus_gateway_zephyr",
+                "DEVICE_NAME": "SNMP_Modbus_Gateway",
                 "FIRMWAREVERSION": "1.0.2",
                 "TIMEZONE": "27",
                 "DST": "0",
