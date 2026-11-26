@@ -80,7 +80,7 @@ Where specifically configured and authorized, the gateway can also accept an
 **SNMP write** command and send the corresponding Modbus write to the field device.
 This **remote-control function** should be enabled only for approved control points.
 
-![Modbus field device to SNMP monitoring-system gateway flow](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_flow.png)
+![Modbus field device to SNMP monitoring-system gateway flow](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_flow.png)
 
 The user configures which Modbus values to read, and how each value appears to SNMP software.
 This means the same gateway can be used with different types of
@@ -197,8 +197,8 @@ tables.
 <a id="42-settings"></a>
 ### 4.2 Settings [↑](#bookmarks "Back to Bookmarks")
 
-The Settings area is used to configure general device options, review device
-information, and configure polling, network, and SNMP access.
+On the **Settings** page, you can configure device options, review device
+information, and set polling, network, and SNMP access.
 
 > **Reminder:**
 > - Restart the device after changing a setting.
@@ -207,33 +207,33 @@ information, and configure polling, network, and SNMP access.
 <a id="421-general"></a>
 #### 4.2.1 General [↑](#bookmarks "Back to Bookmarks")
 
-Use the `General` group to configure the Web Admin password, device time zone,
+Use the **General** tab to configure the Web Admin password, device time zone,
 and daylight saving time.
 
 > **NOTE:** Web Admin Username: `admin`
 
-![Device Console Settings, General group](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_general.png)
+![Device Console Settings, General tab](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_general.png)
 
 <a id="422-info"></a>
 #### 4.2.2 Info [↑](#bookmarks "Back to Bookmarks")
 
-The `Info` group displays the current and maximum number of `TABLE_DEVICES_INPUT` records.
+The **Info** tab shows the current and maximum number of `TABLE_DEVICES_INPUT` records.
 
-![Device Console Settings, Info group](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_info_rev2.png)
+![Device Console Settings, Info tab](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_info_rev2.png)
 
 <a id="423-config"></a>
 #### 4.2.3 Config [↑](#bookmarks "Back to Bookmarks")
 
-The `Config` group provides options for setting the `Polling Interval` and `Debugprint`.
+The **Config** tab provides options for setting the `Polling Interval` and `Debugprint`.
 
 > **NOTE:** The supported `Polling Interval` range is 0.1 to 60 seconds.
 
-![Device Console Settings, Config group](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_config.png)
+![Device Console Settings, Config tab](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_config.png)
 
 <a id="424-network"></a>
 #### 4.2.4 Network [↑](#bookmarks "Back to Bookmarks")
 
-The Network group lets you enable DHCP or configure a static Ethernet IP
+In the **Network** tab, you can enable DHCP or configure a static Ethernet IP
 address, netmask, and gateway.
 
 > **NOTE:**
@@ -241,15 +241,15 @@ address, netmask, and gateway.
 > - DHCP may assign a different IP address and interrupt your Device Console connection.
 > - To keep the device reachable at a known address, a **static** IP address is recommended.
 
-![Device Console Settings, Network group](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_network.png)
+![Device Console Settings, Network tab](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_network.png)
 
 <a id="425-snmp"></a>
 #### 4.2.5 SNMP [↑](#bookmarks "Back to Bookmarks")
 
-Use the `SNMP` group to configure how your monitoring system connects to the gateway.
+Use the **SNMP** tab to configure how your monitoring system connects to the gateway.
 You can set the SNMP port, read and write community strings, device description, system object ID, and SNMPv3 user and security settings.
 
-![Device Console Settings, SNMP basic settings](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_snmp_basic_settings.png)
+![Device Console Settings, SNMP basic settings](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_snmp_basic_settings.png)
 
 > **NOTE:**
 > - **Read:** Use SNMP monitoring software to read gateway values with `snmpget` or `snmpwalk`.
@@ -258,7 +258,7 @@ You can set the SNMP port, read and write community strings, device description,
 
 <br>
 
-![Device Console Settings, SNMPv3 security settings](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_snmp_security_settings.png)
+![Device Console Settings, SNMPv3 security settings](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_snmp_security_settings.png)
 
 <a id="4251-scalar-instance-object-id"></a>
 #### 4.2.5.1 Scalar Instance Object-ID [↑](#bookmarks "Back to Bookmarks")
@@ -282,7 +282,7 @@ Its composition is:
 <a id="43-log"></a>
 ### 4.3 Log [↑](#bookmarks "Back to Bookmarks")
 
-Use the **Log** area to review boot and reboot events. Its reboot-reason code
+Use the **Log** page to review boot and reboot events. Its reboot-reason code
 identifies why the device most recently booted or restarted.
 
 | Reboot-reason code | Reason | Description |
@@ -298,14 +298,14 @@ identifies why the device most recently booted or restarted.
 | `8` | `BOOT_REBOOT_COMMAND` | A reboot was requested by a UDP command, the Device Console, or the cloud. |
 | `9` | `BOOT_REBOOT_FW_UPDATE` | The device restarted while updating firmware from the Device Console or cloud. |
 
-![Device Console, Log area](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_log.png)
+![Device Console, Log page](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_log.png)
 
 <br>
 
 <a id="44-system"></a>
 ### 4.4 System [↑](#bookmarks "Back to Bookmarks")
 
-The `System` area lets you restart the device or restore its default settings.
+The **System** page lets you restart the device or restore its default settings.
 
 <a id="441-reboot-device"></a>
 #### 4.4.1 Reboot Device [↑](#bookmarks "Back to Bookmarks")
@@ -332,7 +332,7 @@ Click **Initialize Settings** to restore the device's default configuration.
 
 <br>
 
-![Device Console, System area](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_system.png)
+![Device Console, System page](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_system.png)
 
 
 <br><br>
@@ -369,7 +369,7 @@ documentation for the required power and communication connections.
 
 > **TIP:** More Tibbo RS-485 Modbus sensor models are available [here](https://tibbo.com/store/rs485-modbus-sensors.html).
 
-![Connecting the BP#02 sensor to the TPP2W(G2)](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/tpp2wg2_modbus_rev2.png)
+![Connecting the BP#02 sensor to the TPP2W(G2)](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/tpp2wg2_modbus_rev2.png)
 
 <br>
 
@@ -381,14 +381,14 @@ Then connect the supplied power adapter to the device. The device starts when
 power is connected. Allow up to 20 seconds for the device to fully boot and
 become ready for use.
 
-![Connecting the Ethernet cable and power adapter to the TPP2W(G2)](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/tpp2wg2_ethernet_power_rev2.png)
+![Connecting the Ethernet cable and power adapter to the TPP2W(G2)](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/tpp2wg2_ethernet_power_rev2.png)
 
 <a id="53-connect-to-the-device-console"></a>
 ### 5.3 Connect to the Device Console [↑](#bookmarks "Back to Bookmarks")
 
 Using your preferred web browser, navigate to [http://192.168.1.40](http://192.168.1.40). Shortly after, the **Home** page should be displayed.
 
-![Device Console, Home area](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_home_rev2.png)
+![Device Console, Home page](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_home_rev2.png)
 
 <br>
 
@@ -404,7 +404,7 @@ changes so that the new settings are applied.
 <a id="541-polling-interval"></a>
 #### 5.4.1 Polling Interval [↑](#bookmarks "Back to Bookmarks")
 
-Set the **Polling Interval** in the **Config** group to a value that suits your
+Set the **Polling Interval** in the **Config** tab to a value that suits your
 application. This setting determines how often the gateway reads values from
 the connected Modbus device.
 
@@ -412,7 +412,7 @@ the connected Modbus device.
 #### 5.4.2 Network [↑](#bookmarks "Back to Bookmarks")
 
 Choose the network method required by your installation in the **Network**
-group:
+tab:
 
 - Enable **DHCP** if your network automatically assigns IP addresses.
 - Leave **DHCP** disabled to use a static IP address, then enter the IP address,
@@ -428,7 +428,7 @@ the Device Console using its new IP address.
 #### 5.4.3 SNMP [↑](#bookmarks "Back to Bookmarks")
 
 Configure the SNMP port and access credentials required by your monitoring
-system in the **SNMP** group. Configure either SNMPv2c community strings or
+system in the **SNMP** tab. Configure either SNMPv2c community strings or
 SNMPv3 user and security settings, as required by your organization.
 
 Enable write access only when it is required for approved control points. Use
@@ -455,7 +455,7 @@ mapping for each Modbus value that you want to make available through SNMP.
 
 <br>
 
-![Device Console Database, TABLE_DEVICES_INPUT](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_devices_input.png)
+![Device Console Database, TABLE_DEVICES_INPUT](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_devices_input.png)
 
 
 <br>
@@ -490,7 +490,7 @@ results, updated at the configured polling interval.
 >   the gateway.
 > - Click **Refresh** to update the displayed table data.
 
-![Device Console Database, TABLE_DEVICES_OUTPUT](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_devices_output.png)
+![Device Console Database, TABLE_DEVICES_OUTPUT](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_devices_output.png)
 
 
 
@@ -517,7 +517,7 @@ For this example, use the configured read community, device IP address, and
 snmpwalk -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46
 ```
 
-![Linux terminal, SNMP walk example](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpwalk_example.png)
+![Linux terminal, SNMP walk example](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpwalk_example.png)
 
 The command displays the available SNMP values and their full OIDs. Locate the
 value with `OID_COLUMN` `401` in the command output.
@@ -535,7 +535,7 @@ Use the following command to read the value with `OID_COLUMN` `401`:
 snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.401.0
 ```
 
-![Linux terminal, SNMP get example](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_example.png)
+![Linux terminal, SNMP get example](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_example.png)
 
 > **NOTE:**
 > - Replace `public`, `192.168.1.40`, and `1.3.6.1.4.1.20738.45.46` when
@@ -587,7 +587,7 @@ mapping with `OID_COLUMN` set to `207`.
 snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.207.0
 ```
 
-![Linux terminal, SNMP get OID 207 before write](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_oid_207_before_write_example.png)
+![Linux terminal, SNMP get OID 207 before write](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_oid_207_before_write_example.png)
 
 > The current value will be used later to compare with the newly written value.
 
@@ -600,7 +600,7 @@ Use the following command to write the value `4546` to `OID_COLUMN` `207`:
 snmpset -v2c -c private 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.207.0 i 4546
 ```
 
-![Linux terminal, SNMP set OID 207](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpset_oid_207_write_example.png)
+![Linux terminal, SNMP set OID 207](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpset_oid_207_write_example.png)
 
 > The command sends the value to the connected Modbus device.
 
@@ -614,7 +614,7 @@ The gateway also provides a confirmation of the most recent SNMP write through
 snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65534.0
 ```
 
-![Linux terminal, SNMP get OID 65534 after write](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_oid_65534_after_write_example.png)
+![Linux terminal, SNMP get OID 65534 after write](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_oid_65534_after_write_example.png)
 
 Confirm that the returned response shows `SUCCESS`.
 
@@ -634,7 +634,7 @@ Use `snmpget` to confirm the written value through SNMP:
 snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.207.0
 ```
 
-![Linux terminal, SNMP get OID 207 after write](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_oid_207_after_write_example.png)
+![Linux terminal, SNMP get OID 207 after write](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_oid_207_after_write_example.png)
 
 Confirm that the returned value is `4546`.
 
@@ -646,7 +646,7 @@ Then open **Database** in the Device Console and select
 `TABLE_DEVICES_OUTPUT`. Confirm that the entry with `OID_COLUMN` `207` shows
 the new `VALUE` of `4546`.
 
-![Device Console Database, TABLE_DEVICES_OUTPUT OID 207](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_devices_output_oid_207.png)
+![Device Console Database, TABLE_DEVICES_OUTPUT OID 207](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_devices_output_oid_207.png)
 
 > **NOTE:**
 > - `TABLE_DEVICES_OUTPUT` is READ-ONLY and does not update automatically.
@@ -690,7 +690,7 @@ example, configure the device with the following settings:
 
 The marked rows below identify these settings and their `OID_COLUMN` values.
 
-![Device Console Database, TABLE_SETTINGS network settings](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_settings_network.png)
+![Device Console Database, TABLE_SETTINGS network settings](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_settings_network.png)
 
 Send the following commands one at a time. The commands use the device's
 current IP address, `192.168.1.40`.
@@ -706,7 +706,7 @@ Disable DHCP:
 snmpset -v2c -c private 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65503.0 s disabled
 ```
 
-![Linux terminal, SNMP set NET_DHCP](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpset_netdhcp_example.png)
+![Linux terminal, SNMP set NET_DHCP](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpset_netdhcp_example.png)
 
 Immediately verify the response:
 
@@ -714,7 +714,7 @@ Immediately verify the response:
 snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65534.0
 ```
 
-![Linux terminal, SNMP response after setting NET_DHCP](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_netdhcp_response_example.png)
+![Linux terminal, SNMP response after setting NET_DHCP](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_netdhcp_response_example.png)
 
 Confirm that the returned response shows `SUCCESS`.
 
@@ -727,7 +727,7 @@ Set the device IP address:
 snmpset -v2c -c private 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65505.0 s 192.168.1.121
 ```
 
-![Linux terminal, SNMP set NET_IP](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpset_netip_example.png)
+![Linux terminal, SNMP set NET_IP](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpset_netip_example.png)
 
 Immediately verify the response:
 
@@ -735,7 +735,7 @@ Immediately verify the response:
 snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65534.0
 ```
 
-![Linux terminal, SNMP response after setting NET_IP](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_netip_response_example.png)
+![Linux terminal, SNMP response after setting NET_IP](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_netip_response_example.png)
 
 Confirm that the returned response shows `SUCCESS`.
 
@@ -748,7 +748,7 @@ Set the subnet mask:
 snmpset -v2c -c private 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65506.0 s 255.255.255.0
 ```
 
-![Linux terminal, SNMP set NET_MASK](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpset_netmask_example.png)
+![Linux terminal, SNMP set NET_MASK](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpset_netmask_example.png)
 
 Immediately verify the response:
 
@@ -756,7 +756,7 @@ Immediately verify the response:
 snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65534.0
 ```
 
-![Linux terminal, SNMP response after setting NET_MASK](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_netmask_response_example.png)
+![Linux terminal, SNMP response after setting NET_MASK](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_netmask_response_example.png)
 
 Confirm that the returned response shows `SUCCESS`.
 
@@ -769,7 +769,7 @@ Set the gateway address:
 snmpset -v2c -c private 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65504.0 s 192.168.1.1
 ```
 
-![Linux terminal, SNMP set NET_GATEWAY](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpset_netgateway_example.png)
+![Linux terminal, SNMP set NET_GATEWAY](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpset_netgateway_example.png)
 
 Immediately verify the response:
 
@@ -777,7 +777,7 @@ Immediately verify the response:
 snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65534.0
 ```
 
-![Linux terminal, SNMP response after setting NET_GATEWAY](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_netgateway_response_example.png)
+![Linux terminal, SNMP response after setting NET_GATEWAY](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_netgateway_response_example.png)
 
 Confirm that the returned response shows `SUCCESS`.
 
@@ -798,7 +798,7 @@ snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65504.0
 
 The results of the above commands are shown here:
 
-![Linux terminal, SNMP get network settings](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_network_example.png)
+![Linux terminal, SNMP get network settings](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_network_example.png)
 
 > The settings are stored but are not active until the device restarts.
 
@@ -814,7 +814,7 @@ In the Device Console:
    Netmask, and Gateway fields show the values written in
    [5.10.2](#5102-write-network-settings-using-snmp).
 
-![Device Console Settings, Network settings written via SNMP](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_network_example.png)
+![Device Console Settings, Network settings written via SNMP](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_settings_network_example.png)
 
 > The settings are stored but are not active until the device restarts.
 
@@ -824,7 +824,7 @@ In the Device Console:
 To apply the changed settings, send two reboot signals within 10 seconds. The
 reboot setting is `SYS_REBOOT_DEVICE`, with OID column `65520`.
 
-![Device Console Database, SYS_REBOOT_DEVICE setting](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_settings_system_reboot.png)
+![Device Console Database, SYS_REBOOT_DEVICE setting](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_webconsole_database_table_settings_system_reboot.png)
 
 <a id="51051-send-1st-reboot-signal"></a>
 ##### 5.10.5.1 Send 1st Reboot Signal [↑](#bookmarks "Back to Bookmarks")
@@ -835,7 +835,7 @@ Send the first reboot signal:
 snmpset -v2c -c private 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65520.0 s true
 ```
 
-![Linux terminal, SNMP set first reboot signal](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpset_reboot_device_example.png)
+![Linux terminal, SNMP set first reboot signal](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpset_reboot_device_example.png)
 
 > The device does not reboot after this first signal. It starts a 10-second
 > confirmation window for the second signal.
@@ -853,7 +853,7 @@ snmpget -v2c -c public 192.168.1.40 1.3.6.1.4.1.20738.45.46.1.65520.0
 Confirm that the response OID column `65534` reports `SUCCESS`, and that
 `SYS_REBOOT_DEVICE` (OID column `65520`) reports `true (1/2)`.
 
-![Linux terminal, SNMP get first reboot signal response](https://raw.githubusercontent.com/tibbotech/appblocks_snmp_modbus_gateway_assets/refs/heads/main/assets/snmp_modbus_gateway_snmpget_reboot_device_example.png)
+![Linux terminal, SNMP get first reboot signal response](https://raw.githubusercontent.com/tibbotech/snmp_modbus_gateway/refs/heads/main/assets/snmp_modbus_gateway_snmpget_reboot_device_example.png)
 
 <a id="51053-send-2nd-reboot-signal-within-10-seconds"></a>
 ##### 5.10.5.3 Send 2nd Reboot Signal within 10 Seconds [↑](#bookmarks "Back to Bookmarks")
